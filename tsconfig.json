@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "declaration": true,
+    "outDir": "./built",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "target": "es5"
+  },
+  "include": ["index.ts", "package.json", "./lib/**/*"]
+}
