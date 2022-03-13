@@ -1,4 +1,6 @@
-var debug = require('debug')('eventstore:eventdispatcher');
+import debugLib from 'debug';
+
+const debug = debugLib('eventstore:eventDispatcher');
 
 /**
  * Eventstore constructor
@@ -131,4 +133,4 @@ EventDispatcher.prototype = {
   }
 };
 
-module.exports = EventDispatcher;
+export default EventDispatcher;

@@ -1,11 +1,11 @@
-var _ = require('lodash');
-var Eventstore = require('./eventstore');
+import _ from 'lodash';
+import Eventstore from './eventstore';
 
 /**
  * Emit events before and after execution of eventstore methods.
  * @param {Function} eventstore - eventstore store instance
  */
-function StoreEventEmitter(eventstore) {
+function StoreEventEmitter(eventstore: typeof Eventstore) {
   if (!eventstore || !(eventstore instanceof Eventstore)) {
     throw new Error('Provided eventstore must be instance of Eventstore');
   }
@@ -287,4 +287,4 @@ function StoreEventEmitter(eventstore) {
   };
 }
 
-module.exports = StoreEventEmitter;
+export default StoreEventEmitter;

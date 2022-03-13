@@ -1,6 +1,8 @@
-var debug = require('debug')('eventstore:eventstream'),
-  _ = require('lodash'),
-  Event = require('./event');
+import debugLib from 'debug';
+import _ from 'lodash';
+import Event from './event';
+
+const debug = debugLib('eventstore:eventstream');
 
 /**
  * EventStream constructor
@@ -116,4 +118,4 @@ EventStream.prototype = {
   }
 };
 
-module.exports = EventStream;
+export default EventStream;

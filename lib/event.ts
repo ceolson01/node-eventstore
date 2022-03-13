@@ -1,6 +1,8 @@
-var debug = require('debug')('eventstore:event'),
-  dotty = require('dotty'),
-  _ = require('lodash');
+import debugLib from 'debug';
+import dotty from 'dotty';
+import _ from 'lodash';
+
+const debug = debugLib('eventstore:event');
 
 /**
  * Event constructor
@@ -57,4 +59,4 @@ function Event (eventstream, event, eventMappings) {
   eventstream.uncommittedEvents.push(this);
 }
 
-module.exports = Event;
+export default Event;

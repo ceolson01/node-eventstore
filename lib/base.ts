@@ -1,8 +1,9 @@
-var util = require('util'),
-  EventEmitter = require('events').EventEmitter,
-  prequire = require('parent-require'),
-  _ = require('lodash'),
-  uuid = require('uuid').v4;
+import util from 'util';
+import { EventEmitter } from 'events';
+import prequire from 'parent-require';
+import _ from 'lodash';
+import { v4 as uuid } from 'uuid';
+
 
 /**
  * Store constructor
@@ -187,4 +188,4 @@ Store.use = function (toRequire) {
   return required;
 };
 
-module.exports = Store;
+export default Store;

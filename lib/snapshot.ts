@@ -1,4 +1,6 @@
-var debug = require('debug')('eventstore:snapshot');
+import debugLib from 'debug';
+
+const debug = debugLib('eventstore:snapshot');
 
 /**
  * Snapshot constructor
@@ -43,4 +45,4 @@ function Snapshot (id, obj) {
   this.data = obj.data;
 }
 
-module.exports = Snapshot;
+export default Snapshot;

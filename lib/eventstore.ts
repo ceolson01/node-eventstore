@@ -1,12 +1,14 @@
-var debug = require('debug')('eventstore'),
-  util = require('util'),
-  EventEmitter = require('events').EventEmitter,
-  _ = require('lodash'),
-  async = require('async'),
-  tolerate = require('tolerance'),
-  EventDispatcher = require('./eventDispatcher'),
-  EventStream = require('./eventStream'),
-  Snapshot = require('./snapshot');
+import debugLib from 'debug';
+import util from 'util';
+import { EventEmitter } from 'events';
+import _ from 'lodash';
+import async from 'async';
+import tolerate from 'tolerance';
+import EventDispatcher from './eventDispatcher';
+import EventStream from './eventStream';
+import Snapshot from './snapshot';
+
+const debug = debugLib('eventstore');
 
 /**
  * Eventstore constructor
@@ -178,7 +180,7 @@ _.extend(Eventstore.prototype, {
     if (!query.aggregateId) {
       var err = new Error('An aggregateId should be passed!');
       debug(err);
-      if (callback) callback(err);
+      // if (callback) callback(err);
       return;
     }
 
@@ -225,7 +227,7 @@ _.extend(Eventstore.prototype, {
 
     function nextFn(callback) {
       if (limit < 0) {
-        var resEvts = [];
+        const resEvts = [] as any;
         resEvts.next = nextFn;
         return process.nextTick(function () { callback(null, resEvts) });
       }
@@ -272,7 +274,7 @@ _.extend(Eventstore.prototype, {
 
     function nextFn(callback) {
       if (limit < 0) {
-        var resEvts = [];
+        var resEvts = [] as any;
         resEvts.next = nextFn;
         return process.nextTick(function () { callback(null, resEvts) });
       }
@@ -629,4 +631,4 @@ _.extend(Eventstore.prototype, {
 
 });
 
-module.exports = Eventstore;
+export default Eventstore;
